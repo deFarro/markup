@@ -1,0 +1,29 @@
+@mixin center {
+  width: $content-width;
+  margin: 0 auto;
+}
+
+@mixin round($dim) {
+  width: $dim;
+  height: $dim;
+  border-radius: 50%;
+}
+
+@mixin flex-container($dir: null, $wrap: null, $just: null, $ali: null) {
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+  align-items: $ali;
+}
+
+@mixin media-query($size) {
+  @if map-get($breakpoints, $size) == null {
+    @error "#{$size} is not valid breakpoint";
+  }
+  @else {
+    @media only screen and (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+$color-primary: #ffbb42;
+$color-primary-light: lighten($color-primary, 7%);
+$color-background: #709dca;
+$text-color-primary: #a9a9a9;
+$text-color-secondary: #868686;
+
+$font-primary: MyriadProRegular, sans-serif;
+$font-secondary: LatoRegular, sans-serif;
+
+$content-width: 95%;
+
+$breakpoints: (
+  'tablet': 750px,
+  'desktop': 950px,
+);

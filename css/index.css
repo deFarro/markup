@@ -1,0 +1,195 @@
+@font-face {
+  font-family: LatoRegular;
+  src: url("../fonts/LatoRegular.ttf"); }
+@font-face {
+  font-family: MyriadProRegular;
+  src: url("../fonts/MyriadProRegular.ttf"); }
+/*MOBILE FIRST -----------------------*/
+* {
+  box-sizing: border-box; }
+
+body {
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  margin: 0; }
+
+header {
+  width: 100%;
+  background-color: white; }
+  @media only screen and (min-width: 950px) {
+    header {
+      height: 70px;
+      width: 100%;
+      position: fixed;
+      top: 0px;
+      background-color: white;
+      z-index: 100; } }
+
+.menu {
+  padding-top: 0.5em;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; }
+  @media only screen and (min-width: 750px) {
+    .menu {
+      width: 90%;
+      justify-content: space-between; } }
+  @media only screen and (min-width: 950px) {
+    .menu {
+      width: 85%; } }
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .navigation a,
+  .navigation a:visited {
+    color: #868686;
+    text-decoration: none;
+    font-size: 0.7em;
+    font-family: LatoRegular, sans-serif;
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 2px; }
+    .navigation a:hover,
+    .navigation a:visited:hover {
+      color: white;
+      background-color: #ffbb42; }
+  @media only screen and (min-width: 750px) {
+    .navigation {
+      flex-direction: row; } }
+  @media only screen and (min-width: 950px) {
+    .navigation {
+      margin-right: 5%; } }
+
+.main-content {
+  width: 95%;
+  margin: 0 auto;
+  font-family: LatoRegular, sans-serif; }
+  @media only screen and (min-width: 750px) {
+    .main-content {
+      width: 90%; } }
+  @media only screen and (min-width: 950px) {
+    .main-content {
+      width: 85%; } }
+
+.slider {
+  position: relative;
+  height: 430px; }
+  @media only screen and (min-width: 950px) {
+    .slider {
+      margin: 70px 0 0 0; } }
+
+.title {
+  width: 100vw;
+  height: 350px;
+  background-color: #709dca; }
+  .title h1,
+  .title h5 {
+    color: white;
+    text-align: center;
+    font-family: MyriadProRegular, sans-serif;
+    margin: 0; }
+  .title h1 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding-top: 1.5em; }
+  .title h5 {
+    font-size: 0.7em; }
+
+.req-quote {
+  width: 70%;
+  margin-top: 2em;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  @media only screen and (min-width: 950px) {
+    .req-quote {
+      width: 70%;
+      flex-direction: row; } }
+
+.form-field {
+  width: 14em;
+  height: 2em;
+  margin: 0.2em;
+  background-color: white;
+  border-radius: 2px; }
+  .form-field input, .form-field button {
+    width: 80%;
+    height: 100%;
+    border: none;
+    font-size: 0.8em;
+    color: #a9a9a9; }
+    .form-field input:focus, .form-field button:focus {
+      outline: none;
+      border-bottom: solid 2px #ffbb42; }
+  .form-field:last-child {
+    background-color: white;
+    text-align: center; }
+  .form-field button {
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    background-color: #ffbb42; }
+    .form-field button:hover {
+      cursor: pointer;
+      background-color: #ffc866; }
+  .form-field .fa {
+    font-size: 0.7em;
+    padding: 0 5%; }
+
+.banner {
+  position: relative;
+  width: 400px;
+  margin: 40px auto 0; }
+
+.macbook {
+  width: 100%; }
+
+.piconmac {
+  position: absolute;
+  top: 12px;
+  left: 64px;
+  width: 274px; }
+
+.arrows {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  display: flex;
+  justify-content: space-between; }
+  .arrows i {
+    color: white; }
+    .arrows i:hover {
+      color: #ffbb42;
+      cursor: pointer; }
+    .arrows i:first-child {
+      margin-left: 33%; }
+    .arrows i:last-child {
+      margin-right: 33%; }
+  .arrows .fa {
+    font-size: 2em; }
+
+.slider-nav {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  text-align: center; }
+  .slider-nav i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: solid 2px #a9a9a9;
+    border-radius: 5px; }
+    .slider-nav i:first-child {
+      border-color: #709dca; }
+
+/* UTILITIES ------------------------- */
+.hidden {
+  display: none; }
+
+/*# sourceMappingURL=index.css.map */

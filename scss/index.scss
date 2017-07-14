@@ -1,0 +1,215 @@
+@import "partials/variables", "partials/mixins", "partials/fonts";
+
+/*MOBILE FIRST -----------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  background-color: white;
+  @include media-query('desktop') {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: white;
+    z-index: 100;
+  }
+}
+
+.menu {
+  padding-top: 0.5em;
+  @include center;
+  @include flex-container($just: center);
+  @include media-query('tablet') {
+    width: 90%;
+    justify-content: space-between;
+  }
+  @include media-query('desktop') {
+    width: 85%;
+  }
+}
+
+.navigation {
+  @include flex-container($dir: column, $ali: center);
+  a,
+  a:visited {
+    color: $text-color-secondary;
+    text-decoration: none;
+    font-size: 0.7em;
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 2px;
+    &:hover {
+      color: white;
+      background-color: $color-primary;
+    }
+  }
+  @include media-query('tablet') {
+    flex-direction: row;
+  }
+  @include media-query('desktop') {
+    margin-right: 5%;
+  }
+}
+
+.main-content {
+  @include center;
+  font-family: $font-secondary;
+  @include media-query('tablet') {
+    width: 90%;
+  }
+  @include media-query('desktop') {
+    width: 85%;
+  }
+}
+
+.slider {
+  position: relative;
+  height: 430px;
+  @include media-query('desktop') {
+    margin: 70px 0 0 0;
+  }
+}
+
+.title {
+  width: 100vw;
+  height: 350px;
+  background-color: $color-background;
+  h1,
+  h5 {
+    color: white;
+    text-align: center;
+    font-family: $font-primary;
+    margin: 0;
+  }
+  h1 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding-top: 1.5em;
+  }
+  h5 {
+    font-size: 0.7em;
+  }
+}
+
+.req-quote {
+  width: 70%;
+  margin-top: 2em;
+  @include center;
+  @include flex-container($dir: column, $just: center);
+  @include media-query('desktop') {
+    width: 70%;
+    flex-direction: row;
+  }
+}
+
+.form-field {
+  width: 14em;
+  height: 2em;
+  margin: 0.2em;
+  background-color: white;
+  border-radius: 2px;
+  input {
+    width: 80%;
+    height: 100%;
+    border: none;
+    font-size: 0.8em;
+    color: $text-color-primary;
+    &:focus {
+      outline: none;
+      border-bottom: solid 2px $color-primary;
+    }
+  }
+  &:last-child {
+    background-color: white;
+    text-align: center;
+  }
+  button {
+    @extend input;
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    background-color: $color-primary;
+    &:hover {
+      cursor: pointer;
+      background-color: $color-primary-light;
+    }
+  }
+  .fa {
+    font-size: 0.7em;
+    padding: 0 5%;
+  }
+}
+
+.banner {
+  position: relative;
+  width: 400px;
+  margin: 40px auto 0;
+}
+
+.macbook {
+  width: 100%;
+}
+
+.piconmac {
+  position: absolute;
+  top: 12px;
+  left: 64px;
+  width: 274px;
+}
+
+.arrows {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  @include flex-container($just: space-between);
+  i {
+    color: white;
+    &:hover {
+      color: $color-primary;
+      cursor: pointer;
+    }
+    &:first-child {
+      margin-left: 33%;
+    }
+    &:last-child {
+      margin-right: 33%;
+    }
+  }
+  .fa {
+    font-size: 2em;
+  }
+}
+
+.slider-nav {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: solid 2px #a9a9a9;
+    border-radius: 5px;
+    &:first-child {
+      border-color: $color-background;
+    }
+  }
+}
+
+/* UTILITIES ------------------------- */
+.hidden {
+  display: none;
+}
