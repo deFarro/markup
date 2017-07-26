@@ -3,21 +3,21 @@
 /*MOBILE FIRST -----------------------*/
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
   background: white;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
+  //max-width: 1920px;
 }
 
-header {
+.header {
   width: 100%;
   background-color: white;
   @include media-query('desktop') {
-    height: 70px;
+    min-height: 70px;
     width: 100%;
     position: fixed;
     top: 0px;
@@ -31,11 +31,11 @@ header {
   @include center;
   @include flex-container($just: center);
   @include media-query('tablet') {
-    width: 90%;
+    width: 85%;
     justify-content: space-between;
   }
   @include media-query('desktop') {
-    width: 85%;
+    width: 75%;
   }
 }
 
@@ -50,6 +50,8 @@ header {
     text-transform: uppercase;
     padding: 1em;
     border-radius: 2px;
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
     &:hover {
       color: white;
       background-color: $color-primary;
@@ -67,16 +69,16 @@ header {
   @include center;
   font-family: $font-secondary;
   @include media-query('tablet') {
-    width: 90%;
+    width: 85%;
   }
   @include media-query('desktop') {
-    width: 85%;
+    width: 75%;
   }
 }
 
 .slider {
   position: relative;
-  height: 430px;
+  min-height: 430px;
   @include media-query('desktop') {
     margin: 70px 0 0 0;
   }
@@ -85,27 +87,54 @@ header {
 .title {
   width: 100vw;
   height: 350px;
-  background-color: $color-background;
-  h1,
-  h5 {
-    color: white;
-    text-align: center;
-    font-family: $font-primary;
-    margin: 0;
+  background-color: $color-slider-background;
+}
+
+%headlines {
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: $font-primary;
+  margin: 0;
+  .services & {
+    color: $text-color-dark;
   }
-  h1 {
-    font-size: 1.5em;
-    text-transform: uppercase;
-    padding-top: 1.5em;
-  }
-  h5 {
-    font-size: 0.7em;
-  }
+}
+h1 {
+  @extend %headlines;
+  text-transform: uppercase;
+  padding-top: 1.5em;
+}
+h2 {
+  @extend %headlines;
+  @extend h1;
+  font-size: 1.2em;
+}
+h3 {
+  @extend %headlines;
+  text-transform: uppercase;
+  font-size: 1em;
+  text-align: left;
+}
+h4 {
+  @extend %headlines;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  text-align: left;
+}
+h5 {
+  @extend %headlines;
+  font-size: 0.8em;
+}
+p {
+  font-size: 0.7em;
+  font-family: $font-primary;
+  color: $text-color-dark;
 }
 
 .req-quote {
   width: 70%;
-  margin-top: 2em;
+  padding-top: 2em;
   @include center;
   @include flex-container($dir: column, $just: center);
   @include media-query('desktop') {
@@ -120,12 +149,17 @@ header {
   margin: 0.2em;
   background-color: white;
   border-radius: 2px;
-  input {
+  %form-pieces {
     width: 80%;
     height: 100%;
     border: none;
     font-size: 0.8em;
     color: $text-color-primary;
+  }
+  input {
+    @extend %form-pieces;
+    border-bottom: solid 2px white;
+    transition: border-bottom 0.3s;
     &:focus {
       outline: none;
       border-bottom: solid 2px $color-primary;
@@ -135,12 +169,13 @@ header {
     background-color: white;
     text-align: center;
   }
-  button {
-    @extend input;
+  .btn-submit-form {
+    @extend %form-pieces;
     width: 100%;
     color: white;
     text-transform: uppercase;
     background-color: $color-primary;
+    transition: background-color 0.3s;
     &:hover {
       cursor: pointer;
       background-color: $color-primary-light;
@@ -176,6 +211,7 @@ header {
   @include flex-container($just: space-between);
   i {
     color: white;
+    transition: color 0.3s;
     &:hover {
       color: $color-primary;
       cursor: pointer;
@@ -201,11 +237,190 @@ header {
     display: inline-block;
     width: 10px;
     height: 10px;
-    border: solid 2px #a9a9a9;
+    border: solid 2px $text-color-primary;
     border-radius: 5px;
     &:first-child {
-      border-color: $color-background;
+      border-color: $color-slider-background;
     }
+  }
+}
+
+.services {
+  margin-top: 2em;
+}
+
+.service-list {
+  @include flex-container($dir: row, $wrap: wrap, $just: space-between);
+  margin-top: 3em;
+  }
+  .service {
+    @include flex-container($dir: column, $wrap: wrap);
+    @include media-query('tablet') {
+      width: 50%;
+  }
+}
+
+.service {
+  i {
+    color: white;
+    height: 100%;
+    text-align: center;
+    font-size: 2em;
+  }
+  h3, p {
+    width: 80%;
+  }
+  .fa {
+    @include outline();
+    transition: text-shadow 0.3s;
+  }
+  &:hover .fa {
+    @include outline($color: darken($color-primary, 20%));
+  }
+}
+
+.about-us {
+  min-height: 350px;
+  @include flex-container;
+  figure,
+  article {
+    margin: 0;
+    flex-basis: 50%;
+  }
+}
+
+.about-img {
+  background-image: url('../img/aboutus.png');
+  background-size: cover;
+}
+
+.about-text {
+  background-color: $color-about-background;
+  padding-top: 3%;
+  padding-left: 5%;
+  h3,
+  h5 {
+    text-align: left;
+    width: 70%;
+  }
+  h3, h5, button {
+    margin: 5% 0;
+    padding: 0;
+  }
+  button {
+    display: block;
+  }
+}
+
+.btn-read-more {
+  width: 8em;
+  height: 2em;
+  text-transform: uppercase;
+  @include text-styling();
+  color: white;
+  background-color: $color-about-background;
+  border: 1px solid $text-color-secondary;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: $color-primary-light;
+  }
+  a {
+    display: inline-block;
+    padding-top: 5%;
+    width: 100%;
+    height: 100%;
+    &:link,
+    &:visited {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.prices {
+  height: 500px;
+  background: $color-prices-background;
+  h2 {
+    padding-top: 3em;
+  }
+  h2,
+  h5 {
+    color: black;
+  }
+}
+
+.plans-list {
+  min-height: 300px;
+  padding: 3% 5%;
+}
+
+.plans {
+  margin-right: 2%;
+  padding: 3%;
+  float: left;
+  width: 32%;
+  min-height: 300px;
+  background-color: white;
+  border: solid 1px #ccd5df;
+  border-radius: 2px;
+  transition-property: background-color, transform;
+  transition-duration: 0.3s;
+  &:last-child {
+    margin-right: 0;
+  }
+  h3,
+  p {
+    font-family: LatoRegular;
+    text-transform: uppercase;
+    text-align: center;
+    color: $text-color-secondary;
+  }
+  div {
+    margin: 1em 0;
+  }
+  .cost {
+    padding: 0;
+    font-size: 2.5em;
+    color: $color-primary;
+    span {
+      font-size: 0.5em;
+      position: relative;
+      top: -1em;
+      left: 0.1em;
+    }
+    .period {
+      padding: 0;
+    }
+  }
+  p {
+    font-size: 0.7em;
+  }
+  p:nth-child(n + 3) {
+    padding: 1em 0;
+    border-top: solid 1px $text-color-secondary;
+  }
+  &:hover {
+    z-index: 100;
+    background-color: $color-slider-background;
+    transform: scale(1.13);
+    p,
+    h3 {
+      color: white;
+      border-color: white;
+    }
+  }
+}
+
+.btn-purchase {
+  @extend .btn-read-more;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 2px;
+  a {
+    padding-top: 7%;
+    font-size: 0.7em;
+    font-family: LatoRegular;
   }
 }
 

@@ -27,3 +27,15 @@
     }
   }
 }
+
+@mixin outline($color: $color-slider-background) {
+  text-shadow: 1px 0 0 $color,
+               0 1px 0 $color,
+               -1px 0 0 $color,
+               0 -1px 0 $color;
+}
+
+@mixin text-styling($size: 1em) {
+  font-size: $size;
+  font-family: $font-primary;
+}
