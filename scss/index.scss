@@ -31,11 +31,11 @@ body {
   @include center;
   @include flex-container($just: center);
   @include media-query('tablet') {
-    width: 85%;
+    width: map-get($content-width, tablet);
     justify-content: space-between;
   }
   @include media-query('desktop') {
-    width: 75%;
+    width: map-get($content-width, desktop);
   }
 }
 
@@ -43,7 +43,7 @@ body {
   @include flex-container($dir: column, $ali: center);
   a,
   a:visited {
-    color: $text-color-secondary;
+    color: map-get($text-color, secondary);
     text-decoration: none;
     font-size: 0.7em;
     font-family: $font-secondary;
@@ -69,10 +69,10 @@ body {
   @include center;
   font-family: $font-secondary;
   @include media-query('tablet') {
-    width: 85%;
+    width: map-get($content-width, tablet);
   }
   @include media-query('desktop') {
-    width: 75%;
+    width: map-get($content-width, desktop);
   }
 }
 
@@ -84,8 +84,7 @@ body {
   }
 }
 
-.title {
-  width: 100vw;
+.slider_background {
   height: 350px;
   background-color: $color-slider-background;
 }
@@ -96,8 +95,9 @@ body {
   font-size: 1.5em;
   font-family: $font-primary;
   margin: 0;
-  .services & {
-    color: $text-color-dark;
+  .services &,
+  .prices & {
+    color: map-get($text-color, dark);
   }
 }
 h1 {
@@ -129,13 +129,13 @@ h5 {
 p {
   font-size: 0.7em;
   font-family: $font-primary;
-  color: $text-color-dark;
+  color: map-get($text-color, dark);
 }
 
 .req-quote {
   width: 70%;
+  margin: 0 auto;
   padding-top: 2em;
-  @include center;
   @include flex-container($dir: column, $just: center);
   @include media-query('desktop') {
     width: 70%;
@@ -154,7 +154,7 @@ p {
     height: 100%;
     border: none;
     font-size: 0.8em;
-    color: $text-color-primary;
+    color: map-get($text-color, primary);
   }
   input {
     @extend %form-pieces;
@@ -237,7 +237,7 @@ p {
     display: inline-block;
     width: 10px;
     height: 10px;
-    border: solid 2px $text-color-primary;
+    border: solid 2px map-get($text-color, primary);
     border-radius: 5px;
     &:first-child {
       border-color: $color-slider-background;
@@ -312,40 +312,20 @@ p {
   }
 }
 
+%btn {
+
+}
+
 .btn-read-more {
-  width: 8em;
-  height: 2em;
-  text-transform: uppercase;
-  @include text-styling();
-  color: white;
-  background-color: $color-about-background;
-  border: 1px solid $text-color-secondary;
-  transition: background-color 0.2s;
-  &:hover {
-    background-color: $color-primary-light;
-  }
-  a {
-    display: inline-block;
-    padding-top: 5%;
-    width: 100%;
-    height: 100%;
-    &:link,
-    &:visited {
-      color: white;
-      text-decoration: none;
-    }
-  }
+  @include btn;
+  @include text-styling;
 }
 
 .prices {
-  height: 500px;
+  min-height: 500px;
   background: $color-prices-background;
   h2 {
     padding-top: 3em;
-  }
-  h2,
-  h5 {
-    color: black;
   }
 }
 
@@ -370,10 +350,10 @@ p {
   }
   h3,
   p {
-    font-family: LatoRegular;
+    font-family: $font-secondary;
     text-transform: uppercase;
     text-align: center;
-    color: $text-color-secondary;
+    color: map-get($text-color, secondary);
   }
   div {
     margin: 1em 0;
@@ -397,7 +377,7 @@ p {
   }
   p:nth-child(n + 3) {
     padding: 1em 0;
-    border-top: solid 1px $text-color-secondary;
+    border-top: solid 1px map-get($text-color, secondary);
   }
   &:hover {
     z-index: 100;
@@ -412,16 +392,20 @@ p {
 }
 
 .btn-purchase {
-  @extend .btn-read-more;
+  @include btn($link-padding: 7%, $font: $font-secondary, $font-size: 0.7em);
   display: block;
   margin: 0 auto;
   border: none;
   border-radius: 2px;
   a {
-    padding-top: 7%;
-    font-size: 0.7em;
-    font-family: LatoRegular;
+    // padding-top: 7%;
+    //font-size: 0.7em;
+    // font-family: $font-secondary;
   }
+}
+
+.clearfix {
+  clear: both;
 }
 
 /* UTILITIES ------------------------- */

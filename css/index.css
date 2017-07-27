@@ -83,8 +83,7 @@ body {
     .slider {
       margin: 70px 0 0 0; } }
 
-.title {
-  width: 100vw;
+.slider_background {
   height: 350px;
   background-color: #709dca; }
 
@@ -94,7 +93,7 @@ h1, h2, h3, h4, h5 {
   font-size: 1.5em;
   font-family: MyriadProRegular, sans-serif;
   margin: 0; }
-  .services h1, .services h2, .services h3, .services h4, .services h5 {
+  .services h1, .services h2, .services h3, .services h4, .services h5, .prices h1, .prices h2, .prices h3, .prices h4, .prices h5 {
     color: #394B55; }
 
 h1, h2 {
@@ -124,9 +123,8 @@ p {
 
 .req-quote {
   width: 70%;
-  padding-top: 2em;
-  width: 95%;
   margin: 0 auto;
+  padding-top: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center; }
@@ -273,35 +271,35 @@ p {
   .about-text button {
     display: block; }
 
-.btn-read-more, .btn-purchase {
+.btn-read-more {
+  font-size: 1em;
+  font-family: MyriadProRegular, sans-serif;
   width: 8em;
   height: 2em;
   text-transform: uppercase;
-  font-size: 1em;
-  font-family: MyriadProRegular, sans-serif;
   color: white;
   background-color: #ffc155;
   border: 1px solid #868686;
-  transition: background-color 0.2s; }
-  .btn-read-more:hover, .btn-purchase:hover {
+  transition: background-color 0.2s;
+  font-size: 1em;
+  font-family: MyriadProRegular, sans-serif; }
+  .btn-read-more:hover {
     background-color: #ffc866; }
-  .btn-read-more a, .btn-purchase a {
+  .btn-read-more a {
     display: inline-block;
     padding-top: 5%;
     width: 100%;
-    height: 100%; }
-    .btn-read-more a:link, .btn-purchase a:link, .btn-read-more a:visited, .btn-purchase a:visited {
+    height: 100%;
+    font-size: 1em; }
+    .btn-read-more a:link, .btn-read-more a:visited {
       color: white;
       text-decoration: none; }
 
 .prices {
-  height: 500px;
+  min-height: 500px;
   background: #e7edf3; }
   .prices h2 {
     padding-top: 3em; }
-  .prices h2,
-  .prices h5 {
-    color: black; }
 
 .plans-list {
   min-height: 300px;
@@ -322,7 +320,7 @@ p {
     margin-right: 0; }
   .plans h3,
   .plans p {
-    font-family: LatoRegular;
+    font-family: LatoRegular, sans-serif;
     text-transform: uppercase;
     text-align: center;
     color: #868686; }
@@ -354,14 +352,33 @@ p {
       border-color: white; }
 
 .btn-purchase {
+  font-size: 1em;
+  font-family: LatoRegular, sans-serif;
+  width: 8em;
+  height: 2em;
+  text-transform: uppercase;
+  color: white;
+  background-color: #ffc155;
+  border: 1px solid #868686;
+  transition: background-color 0.2s;
   display: block;
   margin: 0 auto;
   border: none;
   border-radius: 2px; }
+  .btn-purchase:hover {
+    background-color: #ffc866; }
   .btn-purchase a {
+    display: inline-block;
     padding-top: 7%;
-    font-size: 0.7em;
-    font-family: LatoRegular; }
+    width: 100%;
+    height: 100%;
+    font-size: 0.7em; }
+    .btn-purchase a:link, .btn-purchase a:visited {
+      color: white;
+      text-decoration: none; }
+
+.clearfix {
+  clear: both; }
 
 /* UTILITIES ------------------------- */
 .hidden {
