@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5 {
   font-size: 1.5em;
   font-family: MyriadProRegular, sans-serif;
   margin: 0; }
-  .services h1, .services h2, .services h3, .services h4, .services h5, .prices h1, .prices h2, .prices h3, .prices h4, .prices h5 {
+  .services h1, .services h2, .services h3, .services h4, .services h5, .prices h1, .prices h2, .prices h3, .prices h4, .prices h5, .how-it-works h1, .how-it-works h2, .how-it-works h3, .how-it-works h4, .how-it-works h5 {
     color: #394B55; }
 
 h1, h2 {
@@ -246,8 +246,8 @@ p {
   text-shadow: 1px 0 0 #db8c00, 0 1px 0 #db8c00, -1px 0 0 #db8c00, 0 -1px 0 #db8c00; }
 
 .about-us {
-  min-height: 350px;
-  display: flex; }
+  display: flex;
+  min-height: 350px; }
   .about-us figure,
   .about-us article {
     margin: 0;
@@ -280,9 +280,7 @@ p {
   color: white;
   background-color: #ffc155;
   border: 1px solid #868686;
-  transition: background-color 0.2s;
-  font-size: 1em;
-  font-family: MyriadProRegular, sans-serif; }
+  transition: background-color 0.2s; }
   .btn-read-more:hover {
     background-color: #ffc866; }
   .btn-read-more a {
@@ -379,6 +377,64 @@ p {
 
 .clearfix {
   clear: both; }
+
+.how-it-works {
+  min-height: 500px;
+  padding-top: 2em; }
+
+.steps {
+  display: flex;
+  height: 80%;
+  margin: 2em 0; }
+
+.step {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  position: relative; }
+  .step .fa {
+    text-shadow: 1px 0 0 #709dca, 0 1px 0 #709dca, -1px 0 0 #709dca, 0 -1px 0 #709dca;
+    margin: 0.5em 0;
+    color: white;
+    display: inline-block;
+    font-size: 4em; }
+  .step .step-arrow {
+    position: absolute;
+    left: 75%; }
+  .step .step-arrow.rotated {
+    top: 40%;
+    transform: rotate(180deg); }
+  .step h4,
+  .step p {
+    width: 70%;
+    margin: 2em auto;
+    text-align: center; }
+
+.btn-get-started {
+  font-size: 1em;
+  font-family: LatoRegular, sans-serif;
+  width: 10em;
+  height: 2.5em;
+  text-transform: uppercase;
+  color: white;
+  background-color: #ffc155;
+  border: 1px solid #868686;
+  transition: background-color 0.2s;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 2px; }
+  .btn-get-started:hover {
+    background-color: #ffc866; }
+  .btn-get-started a {
+    display: inline-block;
+    padding-top: 9%;
+    width: 100%;
+    height: 100%;
+    font-size: 0.7em; }
+    .btn-get-started a:link, .btn-get-started a:visited {
+      color: white;
+      text-decoration: none; }
 
 /* UTILITIES ------------------------- */
 .hidden {

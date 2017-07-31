@@ -96,7 +96,8 @@ body {
   font-family: $font-primary;
   margin: 0;
   .services &,
-  .prices & {
+  .prices &,
+  .how-it-works & {
     color: map-get($text-color, dark);
   }
 }
@@ -280,8 +281,8 @@ p {
 }
 
 .about-us {
-  min-height: 350px;
   @include flex-container;
+  min-height: 350px;
   figure,
   article {
     margin: 0;
@@ -312,13 +313,8 @@ p {
   }
 }
 
-%btn {
-
-}
-
 .btn-read-more {
   @include btn;
-  @include text-styling;
 }
 
 .prices {
@@ -392,20 +388,66 @@ p {
 }
 
 .btn-purchase {
-  @include btn($link-padding: 7%, $font: $font-secondary, $font-size: 0.7em);
-  display: block;
-  margin: 0 auto;
-  border: none;
-  border-radius: 2px;
-  a {
-    // padding-top: 7%;
-    //font-size: 0.7em;
-    // font-family: $font-secondary;
+  @include btn($link-padding: 7%, $font: $font-secondary, $font-size: 0.7em) {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 2px;
   }
 }
 
 .clearfix {
   clear: both;
+}
+
+.how-it-works {
+  min-height: 500px;
+  padding-top: 2em;
+}
+
+.steps {
+  @include flex-container();
+  height: 80%;
+  margin: 2em 0;
+}
+
+.step {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  .fa {
+    @include outline;
+    margin: 0.5em 0;
+    color: white;
+    display: inline-block;
+    font-size: 4em;
+  }
+  .step-arrow {
+    position: absolute;
+    left: 75%;
+  }
+  .step-arrow.rotated {
+    top: 40%;
+    transform: rotate(180deg);
+  }
+  h4,
+  p {
+    width: 70%;
+    margin: 2em auto;
+    text-align: center;
+  }
+}
+
+
+
+.btn-get-started {
+  @include btn($link-padding: 9%, $width: 10em, $height: 2.5em, $font: $font-secondary, $font-size: 0.7em) {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 2px;
+  }
 }
 
 /* UTILITIES ------------------------- */
