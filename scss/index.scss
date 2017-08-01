@@ -454,6 +454,68 @@ p {
   }
 }
 
+.success-stories {
+  width: 100%;
+  min-height: 500px;
+  margin-top: 1em;
+  padding-top: 2em;
+  background-color: $color-about-background;
+}
+
+.clients {
+  @include flex-container($wrap: wrap, $just: space-between);
+  width: 100%;
+  margin: 2em 0;
+}
+
+.client {
+  @include flex-container($just: space-between);
+  width: 49%;
+  margin-top: 0.5em;
+  padding-bottom: 1em;
+  background-color: white;
+  img {
+    width: 100px;
+    display: block;
+    margin: auto;
+  }
+  &:hover {
+    i {
+      transform: rotateY(360deg);
+    }
+  }
+}
+
+.quote {
+  width: 65%;
+  margin: 2em 1em 0;
+  position: relative;
+  float: right;
+  p:last-child {
+    margin-top: 2em;
+    font-family: $font-secondary;
+    color: map-get($text-color, secondary);
+    text-transform: uppercase;
+    span {
+      color: map-get($text-color, bright);
+    }
+  }
+  i {
+    position: absolute;
+    font-size: 0.6em;
+    color: map-get($text-color, secondary);
+    transition: all 0.5s;
+    &.fa-quote-left {
+      top: -5px;
+      left: -20px;
+    }
+    &.fa-quote-right {
+      bottom: 30px;
+      left: 50%;
+    }
+  }
+}
+
 
 /* UTILITIES ------------------------- */
 .hidden {

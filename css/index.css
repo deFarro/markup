@@ -456,6 +456,58 @@ p {
       color: white;
       text-decoration: none; }
 
+.success-stories {
+  width: 100%;
+  min-height: 500px;
+  margin-top: 1em;
+  padding-top: 2em;
+  background-color: #ffc155; }
+
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2em 0; }
+
+.client {
+  display: flex;
+  justify-content: space-between;
+  width: 49%;
+  margin-top: 0.5em;
+  padding-bottom: 1em;
+  background-color: white; }
+  .client img {
+    width: 100px;
+    display: block;
+    margin: auto; }
+  .client:hover i {
+    transform: rotateY(360deg); }
+
+.quote {
+  width: 65%;
+  margin: 2em 1em 0;
+  position: relative;
+  float: right; }
+  .quote p:last-child {
+    margin-top: 2em;
+    font-family: LatoRegular;
+    color: #868686;
+    text-transform: uppercase; }
+    .quote p:last-child span {
+      color: #f6772c; }
+  .quote i {
+    position: absolute;
+    font-size: 0.6em;
+    color: #868686;
+    transition: all 0.5s; }
+    .quote i.fa-quote-left {
+      top: -5px;
+      left: -20px; }
+    .quote i.fa-quote-right {
+      bottom: 30px;
+      left: 50%; }
+
 /* UTILITIES ------------------------- */
 .hidden {
   display: none; }
