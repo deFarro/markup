@@ -11,8 +11,12 @@ $text-color: (
   'dark': #394B55
 );
 
-$font-primary: MyriadProRegular, sans-serif;
-$font-secondary: LatoRegular, sans-serif;
+$font-bigger-heading: GothamBlack;
+$font-smaller-heading: OpenSansLight;
+$font-secondary-heading: LatoBold;
+$font-secondary: LatoRegular;
+$font-secondary-light: LatoLight;
+$font-paragraph: OpenSansRegular;
 
 $breakpoints: (
   'tablet': 750px,

@@ -4,6 +4,21 @@
 @font-face {
   font-family: MyriadProRegular;
   src: url("../fonts/MyriadProRegular.ttf"); }
+@font-face {
+  font-family: GothamBlack;
+  src: url("../fonts/GothamBlack.ttf"); }
+@font-face {
+  font-family: LatoBold;
+  src: url("../fonts/LatoBold.ttf"); }
+@font-face {
+  font-family: LatoLight;
+  src: url("../fonts/LatoLight.ttf"); }
+@font-face {
+  font-family: OpenSansLight;
+  src: url("../fonts/OpenSansLight.ttf"); }
+@font-face {
+  font-family: OpenSansRegular;
+  src: url("../fonts/OpenSansRegular.ttf"); }
 /*MOBILE FIRST -----------------------*/
 * {
   margin: 0;
@@ -48,7 +63,7 @@ body {
     color: #868686;
     text-decoration: none;
     font-size: 0.7em;
-    font-family: LatoRegular, sans-serif;
+    font-family: LatoRegular;
     text-transform: uppercase;
     padding: 1em;
     border-radius: 2px;
@@ -68,7 +83,7 @@ body {
 .main-content {
   width: 95%;
   margin: 0 auto;
-  font-family: LatoRegular, sans-serif; }
+  font-family: LatoRegular; }
   @media only screen and (min-width: 750px) {
     .main-content {
       width: 85%; } }
@@ -91,12 +106,12 @@ h1, h2, h3, h4, h5 {
   color: white;
   text-align: center;
   font-size: 1.5em;
-  font-family: MyriadProRegular, sans-serif;
   margin: 0; }
   .services h1, .services h2, .services h3, .services h4, .services h5, .prices h1, .prices h2, .prices h3, .prices h4, .prices h5, .how-it-works h1, .how-it-works h2, .how-it-works h3, .how-it-works h4, .how-it-works h5 {
     color: #394B55; }
 
-h1, h2 {
+h1, h2, h3 {
+  font-family: GothamBlack;
   text-transform: uppercase;
   padding-top: 1.5em; }
 
@@ -111,14 +126,16 @@ h3 {
 h4 {
   text-transform: uppercase;
   font-size: 0.9em;
+  font-family: LatoBold;
   text-align: left; }
 
 h5 {
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  font-family: OpenSansLight; }
 
 p {
   font-size: 0.7em;
-  font-family: MyriadProRegular, sans-serif;
+  font-family: OpenSansRegular;
   color: #394B55; }
 
 .req-quote {
@@ -144,6 +161,7 @@ p {
     height: 100%;
     border: none;
     font-size: 0.8em;
+    font-family: OpenSansRegular;
     color: #a9a9a9; }
   .form-field input {
     border-bottom: solid 2px white;
@@ -158,6 +176,7 @@ p {
     width: 100%;
     color: white;
     text-transform: uppercase;
+    font-family: OpenSansRegular;
     background-color: #ffbb42;
     transition: background-color 0.3s; }
     .form-field .btn-submit-form:hover {
@@ -234,6 +253,7 @@ p {
 
 .service i {
   color: white;
+  width: 70px;
   height: 100%;
   text-align: center;
   font-size: 2em; }
@@ -273,7 +293,7 @@ p {
 
 .btn-read-more {
   font-size: 1em;
-  font-family: MyriadProRegular, sans-serif;
+  font-family: LatoRegular;
   width: 8em;
   height: 2em;
   text-transform: uppercase;
@@ -318,7 +338,7 @@ p {
     margin-right: 0; }
   .plans h3,
   .plans p {
-    font-family: LatoRegular, sans-serif;
+    font-family: LatoLight;
     text-transform: uppercase;
     text-align: center;
     color: #868686; }
@@ -351,7 +371,7 @@ p {
 
 .btn-purchase {
   font-size: 1em;
-  font-family: LatoRegular, sans-serif;
+  font-family: LatoRegular;
   width: 8em;
   height: 2em;
   text-transform: uppercase;
@@ -400,7 +420,7 @@ p {
     font-size: 4em; }
   .step .step-arrow {
     position: absolute;
-    left: 75%; }
+    right: -64px; }
   .step .step-arrow.rotated {
     top: 40%;
     transform: rotate(180deg); }
@@ -412,7 +432,7 @@ p {
 
 .btn-get-started {
   font-size: 1em;
-  font-family: LatoRegular, sans-serif;
+  font-family: LatoRegular;
   width: 10em;
   height: 2.5em;
   text-transform: uppercase;

@@ -35,12 +35,12 @@
                0 -1px 0 $color;
 }
 
-@mixin text-styling($font: $font-primary, $size: 1em) {
+@mixin text-styling($font: $font-secondary, $size: 1em) {
   font-size: $size;
   font-family: $font;
 }
 
-@mixin btn($font: $font-primary, $font-size: 1em, $width: 8em, $height: 2em, $background: $color-about-background, $background-light: $color-primary-light, $link-padding: 5%) {
+@mixin btn($font: $font-secondary, $font-size: 1em, $width: 8em, $height: 2em, $background: $color-about-background, $background-light: $color-primary-light, $link-padding: 5%) {
   @if mixin-exists(text-styling) {
     @include text-styling($font);
   }
