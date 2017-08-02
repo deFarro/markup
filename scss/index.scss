@@ -40,29 +40,7 @@ body {
 }
 
 .navigation {
-  @include flex-container($dir: column, $ali: center);
-  a,
-  a:visited {
-    color: map-get($text-color, secondary);
-    text-decoration: none;
-    font-size: 0.7em;
-    font-family: $font-secondary;
-    text-transform: uppercase;
-    padding: 1em;
-    border-radius: 2px;
-    transition-property: background-color, color;
-    transition-duration: 0.3s;
-    &:hover {
-      color: white;
-      background-color: $color-primary;
-    }
-  }
-  @include media-query('tablet') {
-    flex-direction: row;
-  }
-  @include media-query('desktop') {
-    margin-right: 5%;
-  }
+  @include navigation;
 }
 
 .main-content {
@@ -96,7 +74,8 @@ body {
   margin: 0;
   .services &,
   .prices &,
-  .how-it-works & {
+  .how-it-works &,
+  .newsletter & {
     color: map-get($text-color, dark);
   }
 }
@@ -145,51 +124,8 @@ p {
     width: 70%;
     flex-direction: row;
   }
-}
-
-.form-field {
-  width: 14em;
-  height: 2em;
-  margin: 0.2em;
-  background-color: white;
-  border-radius: 2px;
-  %form-pieces {
-    width: 80%;
-    height: 100%;
-    border: none;
-    font-size: 0.8em;
-    font-family: $font-paragraph;
-    color: map-get($text-color, primary);
-  }
-  input {
-    @extend %form-pieces;
-    border-bottom: solid 2px white;
-    transition: border-bottom 0.3s;
-    &:focus {
-      outline: none;
-      border-bottom: solid 2px $color-primary;
-    }
-  }
-  &:last-child {
-    background-color: white;
-    text-align: center;
-  }
-  .btn-submit-form {
-    @extend %form-pieces;
-    width: 100%;
-    color: white;
-    text-transform: uppercase;
-    font-family: $font-paragraph;
-    background-color: $color-primary;
-    transition: background-color 0.3s;
-    &:hover {
-      cursor: pointer;
-      background-color: $color-primary-light;
-    }
-  }
-  .fa {
-    font-size: 0.7em;
-    padding: 0 5%;
+  .form-field {
+    @include form;
   }
 }
 
@@ -230,7 +166,7 @@ p {
     }
   }
   .fa {
-    font-size: 2em;
+    font-size: 1em;
   }
 }
 
@@ -324,7 +260,7 @@ p {
 }
 
 .prices {
-  min-height: 500px;
+  min-height: 550px;
   background: $color-prices-background;
   h2 {
     padding-top: 3em;
@@ -516,6 +452,118 @@ p {
   }
 }
 
+.newsletter-sign {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 2em;
+  @include flex-container($dir: column, $just: center);
+  @include media-query('desktop') {
+    width: 70%;
+    flex-direction: row;
+  }
+  .form-field {
+    @include form {
+      width: 37%;
+      color: map-get($text-color, secondary);
+      border-radius: 1px;
+      border: 1px solid map-get($text-color, secondary);
+      &:last-child {
+        width: 23%;
+        border: none;
+      }
+    }
+  }
+}
+
+.map {
+  margin-top: 2em;
+  height: 500px;
+  background-image: url('../img/map.png');
+  background-size: contain;
+}
+
+.adress {
+  padding-top: 50px;
+  a {
+    display: block;
+    width: 50px;
+    margin: 1em auto;
+  }
+}
+
+.bubble {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+  background-color: $color-bubble-background;
+  border-radius: 50%;
+  text-align: center;
+  h4 {
+    padding-top: 3em;
+    text-align: center;
+  }
+  p {
+    padding: 0.6em;
+    color: map-get($text-color, secondary);
+  }
+  p:nth-child(6) {
+    color: $color-primary;
+  }
+  .cape {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: -8px;
+    left: 115px;
+    background-color: $color-bubble-background;
+    transform: rotate(45deg);
+  }
+}
+
+.footer {
+  height: 180px;
+  border-top: 1px solid lighten(map-get($text-color, secondary), 20%);
+  p {
+    margin: 0.5em 0;
+    text-align: center;
+    font-size: 1.2em;
+    color: map-get($text-color, dark);
+  }
+}
+
+.footer_navigation {
+  @include navigation($link-color: map-get($text-color, dark)) {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 3em;
+  }
+}
+
+.social {
+  width: 70%;
+  margin: 1em auto;
+  font-size: 1em;
+  text-align: center;
+  a,
+  a:visited {
+    margin: 0 0.5em;
+    color: $color-slider-background;
+  }
+  a:hover {
+    color: $color-primary;
+  }
+}
+
+.copywright {
+  height: 35px;
+  padding-top: 0.7em;
+  text-align: center;
+  background-color: $color-slider-background;
+  p {
+    color: white;
+  }
+}
 
 /* UTILITIES ------------------------- */
 .hidden {

@@ -40,6 +40,33 @@
   font-family: $font;
 }
 
+@mixin navigation ($link-color: map-get($text-color, secondary)) {
+  @include flex-container($dir: column, $ali: center);
+  a,
+  a:visited {
+    color: $link-color;
+    text-decoration: none;
+    font-size: 0.7em;
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 2px;
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+    &:hover {
+      color: white;
+      background-color: $color-primary;
+    }
+  }
+  @include media-query('tablet') {
+    flex-direction: row;
+  }
+  @include media-query('desktop') {
+    margin-right: 5%;
+  }
+  @content;
+}
+
 @mixin btn($font: $font-secondary, $font-size: 1em, $width: 8em, $height: 2em, $background: $color-about-background, $background-light: $color-primary-light, $link-padding: 5%) {
   @if mixin-exists(text-styling) {
     @include text-styling($font);
@@ -71,6 +98,53 @@
       color: white;
       text-decoration: none;
     }
+  }
+  @content;
+}
+
+@mixin form {
+  width: 14em;
+  height: 2em;
+  margin: 0.2em;
+  background-color: white;
+  border-radius: 2px;
+  %form-pieces {
+    width: 80%;
+    height: 100%;
+    border: none;
+    font-size: 0.8em;
+    font-family: $font-paragraph;
+    color: map-get($text-color, primary);
+  }
+  input {
+    @extend %form-pieces;
+    border-bottom: solid 2px white;
+    transition: border-bottom 0.3s;
+    &:focus {
+      outline: none;
+      border-bottom: solid 2px $color-primary;
+    }
+  }
+  &:last-child {
+    background-color: white;
+    text-align: center;
+  }
+  .btn-submit-form {
+    @extend %form-pieces;
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    font-family: $font-paragraph;
+    background-color: $color-primary;
+    transition: background-color 0.3s;
+    &:hover {
+      cursor: pointer;
+      background-color: $color-primary-light;
+    }
+  }
+  .fa {
+    font-size: 0.7em;
+    padding: 0 5%;
   }
   @content;
 }

@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   font-size: 1.5em;
   margin: 0; }
-  .services h1, .services h2, .services h3, .services h4, .services h5, .prices h1, .prices h2, .prices h3, .prices h4, .prices h5, .how-it-works h1, .how-it-works h2, .how-it-works h3, .how-it-works h4, .how-it-works h5 {
+  .services h1, .services h2, .services h3, .services h4, .services h5, .prices h1, .prices h2, .prices h3, .prices h4, .prices h5, .how-it-works h1, .how-it-works h2, .how-it-works h3, .how-it-works h4, .how-it-works h5, .newsletter h1, .newsletter h2, .newsletter h3, .newsletter h4, .newsletter h5 {
     color: #394B55; }
 
 h1, h2, h3 {
@@ -149,42 +149,41 @@ p {
     .req-quote {
       width: 70%;
       flex-direction: row; } }
-
-.form-field {
-  width: 14em;
-  height: 2em;
-  margin: 0.2em;
-  background-color: white;
-  border-radius: 2px; }
-  .form-field input, .form-field .btn-submit-form {
-    width: 80%;
-    height: 100%;
-    border: none;
-    font-size: 0.8em;
-    font-family: OpenSansRegular;
-    color: #a9a9a9; }
-  .form-field input {
-    border-bottom: solid 2px white;
-    transition: border-bottom 0.3s; }
-    .form-field input:focus {
-      outline: none;
-      border-bottom: solid 2px #ffbb42; }
-  .form-field:last-child {
+  .req-quote .form-field {
+    width: 14em;
+    height: 2em;
+    margin: 0.2em;
     background-color: white;
-    text-align: center; }
-  .form-field .btn-submit-form {
-    width: 100%;
-    color: white;
-    text-transform: uppercase;
-    font-family: OpenSansRegular;
-    background-color: #ffbb42;
-    transition: background-color 0.3s; }
-    .form-field .btn-submit-form:hover {
-      cursor: pointer;
-      background-color: #ffc866; }
-  .form-field .fa {
-    font-size: 0.7em;
-    padding: 0 5%; }
+    border-radius: 2px; }
+    .req-quote .form-field input, .req-quote .form-field .btn-submit-form {
+      width: 80%;
+      height: 100%;
+      border: none;
+      font-size: 0.8em;
+      font-family: OpenSansRegular;
+      color: #a9a9a9; }
+    .req-quote .form-field input {
+      border-bottom: solid 2px white;
+      transition: border-bottom 0.3s; }
+      .req-quote .form-field input:focus {
+        outline: none;
+        border-bottom: solid 2px #ffbb42; }
+    .req-quote .form-field:last-child {
+      background-color: white;
+      text-align: center; }
+    .req-quote .form-field .btn-submit-form {
+      width: 100%;
+      color: white;
+      text-transform: uppercase;
+      font-family: OpenSansRegular;
+      background-color: #ffbb42;
+      transition: background-color 0.3s; }
+      .req-quote .form-field .btn-submit-form:hover {
+        cursor: pointer;
+        background-color: #ffc866; }
+    .req-quote .form-field .fa {
+      font-size: 0.7em;
+      padding: 0 5%; }
 
 .banner {
   position: relative;
@@ -217,7 +216,7 @@ p {
     .arrows i:last-child {
       margin-right: 33%; }
   .arrows .fa {
-    font-size: 2em; }
+    font-size: 1em; }
 
 .slider-nav {
   width: 100%;
@@ -314,7 +313,7 @@ p {
       text-decoration: none; }
 
 .prices {
-  min-height: 500px;
+  min-height: 550px;
   background: #e7edf3; }
   .prices h2 {
     padding-top: 3em; }
@@ -507,6 +506,156 @@ p {
     .quote i.fa-quote-right {
       bottom: 30px;
       left: 50%; }
+
+.newsletter-sign {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  @media only screen and (min-width: 950px) {
+    .newsletter-sign {
+      width: 70%;
+      flex-direction: row; } }
+  .newsletter-sign .form-field {
+    width: 14em;
+    height: 2em;
+    margin: 0.2em;
+    background-color: white;
+    border-radius: 2px;
+    width: 37%;
+    color: #868686;
+    border-radius: 1px;
+    border: 1px solid #868686; }
+    .newsletter-sign .form-field input, .newsletter-sign .form-field .btn-submit-form {
+      width: 80%;
+      height: 100%;
+      border: none;
+      font-size: 0.8em;
+      font-family: OpenSansRegular;
+      color: #a9a9a9; }
+    .newsletter-sign .form-field input {
+      border-bottom: solid 2px white;
+      transition: border-bottom 0.3s; }
+      .newsletter-sign .form-field input:focus {
+        outline: none;
+        border-bottom: solid 2px #ffbb42; }
+    .newsletter-sign .form-field:last-child {
+      background-color: white;
+      text-align: center; }
+    .newsletter-sign .form-field .btn-submit-form {
+      width: 100%;
+      color: white;
+      text-transform: uppercase;
+      font-family: OpenSansRegular;
+      background-color: #ffbb42;
+      transition: background-color 0.3s; }
+      .newsletter-sign .form-field .btn-submit-form:hover {
+        cursor: pointer;
+        background-color: #ffc866; }
+    .newsletter-sign .form-field .fa {
+      font-size: 0.7em;
+      padding: 0 5%; }
+    .newsletter-sign .form-field:last-child {
+      width: 23%;
+      border: none; }
+
+.map {
+  margin-top: 2em;
+  height: 500px;
+  background-image: url("../img/map.png");
+  background-size: contain; }
+
+.adress {
+  padding-top: 50px; }
+  .adress a {
+    display: block;
+    width: 50px;
+    margin: 1em auto; }
+
+.bubble {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #394b50;
+  border-radius: 50%;
+  text-align: center; }
+  .bubble h4 {
+    padding-top: 3em;
+    text-align: center; }
+  .bubble p {
+    padding: 0.6em;
+    color: #868686; }
+  .bubble p:nth-child(6) {
+    color: #ffbb42; }
+  .bubble .cape {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: -8px;
+    left: 115px;
+    background-color: #394b50;
+    transform: rotate(45deg); }
+
+.footer {
+  height: 180px;
+  border-top: 1px solid #b9b9b9; }
+  .footer p {
+    margin: 0.5em 0;
+    text-align: center;
+    font-size: 1.2em;
+    color: #394B55; }
+
+.footer_navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 3em; }
+  .footer_navigation a,
+  .footer_navigation a:visited {
+    color: #394B55;
+    text-decoration: none;
+    font-size: 0.7em;
+    font-family: LatoRegular;
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 2px;
+    transition-property: background-color, color;
+    transition-duration: 0.3s; }
+    .footer_navigation a:hover,
+    .footer_navigation a:visited:hover {
+      color: white;
+      background-color: #ffbb42; }
+  @media only screen and (min-width: 750px) {
+    .footer_navigation {
+      flex-direction: row; } }
+  @media only screen and (min-width: 950px) {
+    .footer_navigation {
+      margin-right: 5%; } }
+
+.social {
+  width: 70%;
+  margin: 1em auto;
+  font-size: 1em;
+  text-align: center; }
+  .social a,
+  .social a:visited {
+    margin: 0 0.5em;
+    color: #709dca; }
+  .social a:hover {
+    color: #ffbb42; }
+
+.copywright {
+  height: 35px;
+  padding-top: 0.7em;
+  text-align: center;
+  background-color: #709dca; }
+  .copywright p {
+    color: white; }
 
 /* UTILITIES ------------------------- */
 .hidden {
