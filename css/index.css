@@ -229,11 +229,11 @@ p {
     height: 10px;
     border: solid 2px #a9a9a9;
     border-radius: 5px; }
-    .slider-nav i:first-child {
+    .slider-nav i.selected {
       border-color: #709dca; }
 
 .services {
-  margin-top: 2em; }
+  margin: 3em auto; }
 
 .service-list {
   display: flex;

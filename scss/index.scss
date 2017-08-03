@@ -181,14 +181,14 @@ p {
     height: 10px;
     border: solid 2px map-get($text-color, primary);
     border-radius: 5px;
-    &:first-child {
+    &.selected {
       border-color: $color-slider-background;
     }
   }
 }
 
 .services {
-  margin-top: 2em;
+  margin: 3em auto;
 }
 
 .service-list {
