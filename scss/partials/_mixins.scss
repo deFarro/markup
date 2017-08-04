@@ -41,7 +41,7 @@
 }
 
 @mixin navigation ($link-color: map-get($text-color, secondary)) {
-  @include flex-container($dir: column, $ali: center);
+  @include flex-container($dir: column, $ali: center, $just: center);
   a,
   a:visited {
     color: $link-color;
@@ -60,9 +60,6 @@
   }
   @include media-query('tablet') {
     flex-direction: row;
-  }
-  @include media-query('desktop') {
-    margin-right: 5%;
   }
   @content;
 }

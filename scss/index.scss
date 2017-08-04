@@ -29,10 +29,21 @@ body {
 .menu {
   padding-top: 0.5em;
   @include center;
-  @include flex-container($just: center);
+  @include flex-container($just: space-between);
+  .fa-bars {
+    font-size: 3em;
+  }
+  .navigation {
+    display: none;
+  }
   @include media-query('tablet') {
     width: map-get($content-width, tablet);
-    justify-content: space-between;
+    .fa-bars {
+      display: none;
+    }
+    .navigation {
+      display: inherit;
+    }
   }
   @include media-query('desktop') {
     width: map-get($content-width, desktop);
@@ -41,6 +52,9 @@ body {
 
 .navigation {
   @include navigation;
+  @include media-query('desktop') {
+    margin-right: 5%;
+  }
 }
 
 .main-content {
@@ -54,17 +68,28 @@ body {
   }
 }
 
-.slider {
+.title {
   position: relative;
-  min-height: 430px;
+  min-height: 280px;
   @include media-query('desktop') {
     margin: 70px 0 0 0;
+    min-height: 430px;
   }
 }
 
 .slider_background {
-  height: 350px;
+  height: 280px;
   background-color: $color-slider-background;
+  @include media-query('desktop') {
+    height: 350px;
+  }
+}
+
+.slider {
+  display: none;
+  @include media-query('desktop') {
+    display: inherit;
+  }
 }
 
 %headlines {
@@ -125,7 +150,12 @@ p {
     flex-direction: row;
   }
   .form-field {
-    @include form;
+    @include form {
+      margin: 0.2em auto;
+    }
+    @include media-query('desktop') {
+      margin: 0.2em;
+    }
   }
 }
 
@@ -194,11 +224,12 @@ p {
 .service-list {
   @include flex-container($dir: row, $wrap: wrap, $just: space-between);
   margin-top: 3em;
-  }
-  .service {
-    @include flex-container($dir: column, $wrap: wrap);
-    @include media-query('tablet') {
-      width: 50%;
+}
+
+.service {
+  @include flex-container($dir: column, $wrap: wrap);
+  @include media-query('tablet') {
+    width: 50%;
   }
 }
 
@@ -228,19 +259,24 @@ p {
   figure,
   article {
     margin: 0;
-    flex-basis: 50%;
   }
+  background-color: $color-about-background;
 }
 
 .about-img {
   background-image: url('../img/aboutus.png');
   background-size: cover;
+  display: none;
+  @include media-query('desktop') {
+    display: inherit;
+    flex-basis: 50%;
+  }
 }
 
 .about-text {
   background-color: $color-about-background;
   padding-top: 3%;
-  padding-left: 5%;
+  padding-left: 10%;
   h3,
   h5 {
     text-align: left;
@@ -252,6 +288,10 @@ p {
   }
   button {
     display: block;
+  }
+  @include media-query('desktop') {
+    flex-basis: 50%;
+    padding-left: 5%;
   }
 }
 
@@ -273,21 +313,17 @@ p {
 }
 
 .plans {
-  margin-right: 2%;
+  margin: 2% auto;
   padding: 3%;
-  float: left;
-  width: 32%;
-  min-height: 300px;
+  width: 50%;
+  min-height: 200px;
   background-color: white;
   border: solid 1px #ccd5df;
   border-radius: 2px;
   transition-property: background-color, transform;
   transition-duration: 0.3s;
-  &:last-child {
-    margin-right: 0;
-  }
   h3,
-  p {
+  div p {
     font-family: $font-secondary-light;
     text-transform: uppercase;
     text-align: center;
@@ -310,13 +346,6 @@ p {
       padding: 0;
     }
   }
-  p {
-    font-size: 0.7em;
-  }
-  p:nth-child(n + 3) {
-    padding: 1em 0;
-    border-top: solid 1px map-get($text-color, secondary);
-  }
   &:hover {
     z-index: 100;
     background-color: $color-slider-background;
@@ -326,6 +355,27 @@ p {
       color: white;
       border-color: white;
     }
+  }
+  @include media-query('desktop') {
+    width: 32%;
+    min-height: 300px;
+    float: left;
+    margin: 0 2% 0 0;
+    &:last-child {
+      margin: 0 0 0 0;
+    }
+  }
+}
+
+.info-block {
+  display: none;
+  p {
+    font-size: 0.7em;
+    padding: 1em 0;
+    border-top: solid 1px map-get($text-color, secondary);
+  }
+  @include media-query('desktop') {
+    display: inherit;
   }
 }
 
@@ -343,14 +393,20 @@ p {
 }
 
 .how-it-works {
-  min-height: 500px;
+  min-height: 370px;
   padding-top: 2em;
+  @include media-query('desktop') {
+    min-height: 500px;
+  }
 }
 
 .steps {
-  @include flex-container();
+  @include flex-container($dir: column);
   height: 80%;
   margin: 2em 0;
+  @include media-query('tablet') {
+    flex-direction: row;
+  }
 }
 
 .step {
@@ -358,6 +414,8 @@ p {
   height: 100%;
   text-align: center;
   position: relative;
+  border: 1px solid $color-slider-background;
+  margin: 0.5em auto;
   .fa {
     @include outline;
     margin: 0.5em 0;
@@ -369,6 +427,14 @@ p {
     position: absolute;
     right: -64px;
   }
+  .fa,
+  .step-arrow,
+  .step-arrow.rotated {
+    display: none;
+    @include media-query('desktop') {
+      display: inline-block;
+    }
+  }
   .step-arrow.rotated {
     top: 40%;
     transform: rotate(180deg);
@@ -378,6 +444,9 @@ p {
     width: 70%;
     margin: 2em auto;
     text-align: center;
+  }
+  @include media-query('tablet') {
+    border: none;
   }
 }
 
@@ -399,34 +468,48 @@ p {
 }
 
 .clients {
-  @include flex-container($wrap: wrap, $just: space-between);
+  @include flex-container($dir: column, $wrap: wrap, $just: space-between);
   width: 100%;
   margin: 2em 0;
+  padding-bottom: 1em;
+  @include media-query('tablet') {
+    flex-direction: row;
+  }
 }
 
 .client {
   @include flex-container($just: space-between);
   width: 49%;
-  margin-top: 0.5em;
-  padding-bottom: 1em;
+  margin: 0.5em auto;
+  padding: 1em;
   background-color: white;
   img {
     width: 100px;
-    display: block;
+    display: none;
     margin: auto;
+    @include media-query('tablet') {
+      display: block;
+    }
   }
   &:hover {
     i {
       transform: rotateY(360deg);
     }
   }
+  @include media-query('tablet') {
+    margin: 0.5em 0 0 0;
+  }
 }
 
 .quote {
-  width: 65%;
-  margin: 2em 1em 0;
+  width: 100%;
+  margin: 1em 1em 0;
   position: relative;
   float: right;
+  @include media-query('tablet') {
+    width: 65%;
+    margin: 2em 1em 0;
+  }
   p:last-child {
     margin-top: 2em;
     font-family: $font-secondary;
@@ -449,6 +532,10 @@ p {
       bottom: 30px;
       left: 50%;
     }
+    display: none;
+    @include media-query('tablet') {
+      display: inherit;
+    }
   }
 }
 
@@ -463,23 +550,35 @@ p {
   }
   .form-field {
     @include form {
-      width: 37%;
+      width: 50%;
+      margin: 0.2em auto;
       color: map-get($text-color, secondary);
       border-radius: 1px;
       border: 1px solid map-get($text-color, secondary);
       &:last-child {
-        width: 23%;
         border: none;
+        @include media-query('desktop') {
+          width: 23%;
+        }
+      }
+      @include media-query('desktop') {
+        width: 37%;
+        margin: 0.2em;
       }
     }
   }
 }
 
 .map {
-  margin-top: 2em;
-  height: 500px;
-  background-image: url('../img/map.png');
-  background-size: contain;
+  min-height: 300px;
+  background-size: cover;
+  @include media-query('desktop') {
+    margin-top: 2em;
+    min-height: 500px;
+    background-image: url('../img/map.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
 
 .adress {
@@ -488,6 +587,12 @@ p {
     display: block;
     width: 50px;
     margin: 1em auto;
+  }
+  .logo {
+    display: none;
+    @include media-query('desktop') {
+      display: inherit;
+    }
   }
 }
 
@@ -516,16 +621,20 @@ p {
     position: absolute;
     bottom: -8px;
     left: 115px;
+    display: none;
     background-color: $color-bubble-background;
     transform: rotate(45deg);
+    @include media-query('desktop') {
+      display: inherit;
+    }
   }
 }
 
 .footer {
-  height: 180px;
+  min-height: 80px;
   border-top: 1px solid lighten(map-get($text-color, secondary), 20%);
   p {
-    margin: 0.5em 0;
+    margin: 2em auto;
     text-align: center;
     font-size: 1.2em;
     color: map-get($text-color, dark);
@@ -534,15 +643,19 @@ p {
 
 .footer_navigation {
   @include navigation($link-color: map-get($text-color, dark)) {
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 3em;
+    width: 100%;
+    margin: 2em 0;
+    //padding-top: 2em;
+  }
+  display: none;
+  @include media-query('tablet') {
+    display: flex;
   }
 }
 
 .social {
   width: 70%;
-  margin: 1em auto;
+  margin: 2em auto;
   font-size: 1em;
   text-align: center;
   a,
