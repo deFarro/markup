@@ -39,7 +39,7 @@ body {
   }
   @include media-query('tablet') {
     width: map-get($content-width, tablet);
-    .fa-bars {
+    .dropdown {
       display: none;
     }
     .navigation {
@@ -61,6 +61,14 @@ body {
 // Customizing Bootstrap navigation color
 .nav-pills>li.active>a {
   background-color: $color-slider-background;
+}
+
+// Customizing Bootstrap dropdown
+.dropdown {
+  a {
+    @include text-styling;
+    text-transform: uppercase;
+  }
 }
 
 .main-content {

@@ -54,7 +54,7 @@ body {
   @media only screen and (min-width: 770px) {
     .menu {
       width: 85%; }
-      .menu .fa-bars {
+      .menu .dropdown {
         display: none; }
       .menu .navigation {
         display: inherit; } }
@@ -91,6 +91,11 @@ body {
 
 .nav-pills > li.active > a {
   background-color: #709dca; }
+
+.dropdown a {
+  font-size: 1em;
+  font-family: LatoRegular;
+  text-transform: uppercase; }
 
 .main-content {
   width: 95%;
