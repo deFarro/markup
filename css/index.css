@@ -26,14 +26,15 @@
   box-sizing: border-box; }
 
 body {
-  background: white; }
+  background: white;
+  position: relative; }
 
 .header {
   width: 100%;
+  min-height: 70px;
   background-color: white; }
   @media only screen and (min-width: 1000px) {
     .header {
-      min-height: 70px;
       width: 100%;
       position: fixed;
       top: 0px;
@@ -87,6 +88,9 @@ body {
   @media only screen and (min-width: 1000px) {
     .navigation {
       margin-right: 5%; } }
+
+.nav-pills > li.active > a {
+  background-color: #709dca; }
 
 .main-content {
   width: 95%;

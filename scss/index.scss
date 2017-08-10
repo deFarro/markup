@@ -10,14 +10,15 @@
 
 body {
   background: white;
+  position: relative;
   //max-width: 1920px;
 }
 
 .header {
   width: 100%;
+  min-height: 70px;
   background-color: white;
   @include media-query('desktop') {
-    min-height: 70px;
     width: 100%;
     position: fixed;
     top: 0px;
@@ -55,6 +56,11 @@ body {
   @include media-query('desktop') {
     margin-right: 5%;
   }
+}
+
+// Customizing Bootstrap navigation color
+.nav-pills>li.active>a {
+  background-color: $color-slider-background;
 }
 
 .main-content {

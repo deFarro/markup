@@ -9,23 +9,23 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
+<body data-spy="scroll" data-target=".menu" data-offset="100">
   <header class="header">
     <div class="menu">
       <a href="#"><img class="logo" src="img/logo.png" alt="logo"></a>
       <i class="fa fa-bars"></i>
-      <nav class="navigation">
-        <a href="#">Home</a>
-        <a href="#">Service</a>
-        <a href="#">About us</a>
-        <a href="#">Pricing Table</a>
-        <a href="#">How it work</a>
-        <a href="#">Happy Clients</a>
-        <a href="#">Contact Us</a>
+      <nav class="navigation nav nav-pills">
+        <li role="presentation" class="active"><a href="#home">Home</a></li>
+        <li role="presentation"><a href="#services">Service</a></li>
+        <li role="presentation"><a href="#about">About us</a></li>
+        <li role="presentation"><a href="#prices">Pricing Table</a></li>
+        <li role="presentation"><a href="#howitworks">How it work</a></li>
+        <li role="presentation"><a href="#cliens">Happy Clients</a></li>
+        <li role="presentation"><a href="#contact">Contact Us</a></li>
       </nav>
     </div>
   </header>
-  <div class="title">
+  <div id="home" class="title">
     <div class="slider_background">
       <h1>Boost up your Local business</h1>
       <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum typesetting</h5>
@@ -52,7 +52,7 @@
         </div>
       </div>
     </div>
-    <section class="main-content services">
+    <section id="services" class="main-content services">
       <h2>Our Services</h2>
       <h5>Lorem Ipsum is simply dummy Business industry.</h5>
       <div class="service-list">
@@ -94,7 +94,7 @@ the 1500s, when an unknown printer.</p>
         </article>
       </div>
     </section>
-    <section class="about-us">
+    <section id="about" class="about-us">
       <figure class="about-img"></figure>
       <article class="about-text">
         <h3>About us</h3>
@@ -102,7 +102,7 @@ the 1500s, when an unknown printer.</p>
         <button class="btn-read-more"><a href="#">Read more</a></button>
       </article>
     </section>
-    <section class="prices">
+    <section id="prices" class="prices">
       <h2>Choose your price</h2>
       <h5>Lorem Ipsum is simply dummy text of the printing typesetting.</h5>
       <div class="main-content plans-list">
@@ -148,7 +148,7 @@ the 1500s, when an unknown printer.</p>
       </div>
       <div class="clearfix"></div>
     </section>
-    <section class="main-content how-it-works">
+    <section id="howitworks" class="main-content how-it-works">
       <h2>How it works</h2>
       <h5>Lorem Ipsum is simply dummy Business industry</h5>
       <div class="steps">
@@ -190,7 +190,7 @@ the 1500s, when an unknown printer.</p>
       </div>
       <button class="btn-get-started"><a href="#">Get Start Now</a></button>
     </section>
-    <section class="success-stories">
+    <section id="cliens" class="success-stories">
       <div class="main-content">
         <h2>Happy Clients</h2>
         <h5>We are explain who is using our business solutions</h5>
@@ -238,7 +238,7 @@ the 1500s, when an unknown printer.</p>
         </div>
       </div>
     </section>
-    <section class="main-content newsletter">
+    <section id='contact' class="main-content newsletter">
       <h2>Newsletter</h2>
       <h5>Lorem Ipsum is simply dummy Business industry</h5>
       <form class="newsletter-sign">
@@ -264,13 +264,13 @@ the 1500s, when an unknown printer.</p>
     </section>
     <footer class="main-content footer">
       <nav class="footer_navigation">
-        <a href="#">Home</a>
-        <a href="#">Service</a>
-        <a href="#">About us</a>
-        <a href="#">Pricing Table</a>
-        <a href="#">How it work</a>
-        <a href="#">Happy Clients</a>
-        <a href="#">Contact Us</a>
+        <a href="#home">Home</a>
+        <a href="#services">Service</a>
+        <a href="#about">About us</a>
+        <a href="#proces">Pricing Table</a>
+        <a href="#howitworks">How it work</a>
+        <a href="#cliens">Happy Clients</a>
+        <a href="#contact">Contact Us</a>
       </nav>
       <p><i class="fa fa-phone" aria-hidden="true"></i> +987 9976 999</p>
       <div class="social">

@@ -1,5 +1,7 @@
 'use strict';
 
+// Adding interactive gallery
+
 const picsOnMac = ['img/piconmac1.jpg', 'img/piconmac2.jpg', 'img/piconmac3.jpg'];
 
 const $img = $('.piconmac');
@@ -39,3 +41,19 @@ function updateDots(index) {
   $dots.each(function() {$(this).removeClass('selected')});
   $dots.eq(index).addClass('selected');
 }
+
+// Fixing ancor navigation offset issue
+
+function offsetAnchor() {
+  if (location.hash.length !== 0) {
+    window.scrollTo(window.scrollX, window.scrollY - 75);
+  }
+}
+
+$(document).on('click', 'a[href^="#"]', function(event) {
+  window.setTimeout(function() {
+    offsetAnchor();
+  }, 0);
+});
+
+window.setTimeout(offsetAnchor, 0);
