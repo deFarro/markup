@@ -418,13 +418,13 @@ p {
   @include flex-container($dir: column);
   height: 80%;
   margin: 2em 0;
-  @include media-query('tablet') {
+  @include media-query('desktop') {
     flex-direction: row;
   }
 }
 
 .step {
-  width: 25%;
+  width: 70%;
   height: 100%;
   text-align: center;
   position: relative;
@@ -459,7 +459,9 @@ p {
     margin: 2em auto;
     text-align: center;
   }
-  @include media-query('tablet') {
+  @include media-query('desktop') {
+    width: 25%;
+    margin: 0.5em auto;
     border: none;
   }
 }

@@ -459,12 +459,12 @@ p {
   flex-direction: column;
   height: 80%;
   margin: 2em 0; }
-  @media only screen and (min-width: 770px) {
+  @media only screen and (min-width: 1000px) {
     .steps {
       flex-direction: row; } }
 
 .step {
-  width: 25%;
+  width: 70%;
   height: 100%;
   text-align: center;
   position: relative;
@@ -496,8 +496,10 @@ p {
     width: 70%;
     margin: 2em auto;
     text-align: center; }
-  @media only screen and (min-width: 770px) {
+  @media only screen and (min-width: 1000px) {
     .step {
+      width: 25%;
+      margin: 0.5em auto;
       border: none; } }
 
 .btn-get-started {
